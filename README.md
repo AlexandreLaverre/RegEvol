@@ -11,7 +11,7 @@ The pipeline includes the following key steps:
 - **TF ChIP-seq Peak Calling**: Extraction and processing of transcription factor binding sites from publicly available ChIP-seq datasets in mammals and drosophila.
 - **Homologous Sequence Retrieval**: Identification of orthologous regulatory regions using whole-genome alignments from the Zoonomia Consortium.
 
-### Predictive Modeling
+### Predictive Modelling
 - **gkm-SVM Training**: Training of gapped k-mer support vector machine (gkm-SVM) models on species-specific regulatory sequences to predict binding affinity changes.
 
 ### Positive Selection Detection
@@ -54,8 +54,8 @@ Before running the pipelines, ensure the following tools are installed on your s
 
 This workflow also depends on:
 
-- **[Snakemake](https://snakemake.readthedocs.io/)** : to run the RegEvol pipeline.
-- **[Nextflow](https://www.nextflow.io/)** : to run the ChIP-seq calling pipeline.
+- **[Snakemake](https://snakemake.readthedocs.io/)** : to run the RegEvol pipeline (version 7.24.0 was used in development).
+- **[Nextflow](https://www.nextflow.io/)** : to run the ChIP-seq peaks calling pipeline (version 22.10 was used in development).
 
 ### Option 1: Use your existing installation  
 If you already have **Snakemake** and **Nextflow** installed on your system, you can skip creating the bundled environment and run the workflow directly.
@@ -134,7 +134,7 @@ The pipeline requires the following three input files:
 
 #### Run
 ```bash
-./2_selection_tests/run.snakemake.sh --sp <species> --sample <sample> [options]
+./2_selection_tests/Snakemake/run.Snakemake.sh --sp <species> --sample <sample> [options]
 ```
 
 Required arguments:
