@@ -24,7 +24,7 @@ mkdir -p "${pathResults}/sister_sequences/"
 mkdir -p "${pathResults}/ancestral_sequences/"
 # Define focal and ancestral names
 
-source ${path}/scripts/config/params.sh "$sp"
+source ${path}/config/params.sh "$sp"
 sister_name="$(echo "$close_species" | cut -d "," -f 2)"
 
 

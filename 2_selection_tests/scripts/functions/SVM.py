@@ -149,12 +149,16 @@ def get_sub_matrix(path_matrix):
     for file in os.listdir(path_matrix):
         if file.endswith('.txt'):
             chrom = file.strip('.txt')
-
             chrom_Table = pandas.read_table(path_matrix + file, sep=' ')
             chrom_Table.index = ['A', 'C', 'G', 'T']  # change row values
-            np.fill_diagonal(chrom_Table.values, 0)  # assign 0 to diagonal
+
+            # assign 0 to diagonal
+            for nuc in chrom_Table.index:
+                chrom_Table.loc[nuc, nuc] = 0
+
             chrom_SubMat = chrom_Table.to_dict('index')  # get dict by matrix rows
             sub_mats[chrom] = chrom_SubMat
+
             # get normalized dict by matrix rows
             sub_mats_norm[chrom] = chrom_Table.div(chrom_Table.sum(axis=1), axis=0).to_dict('index')
 
@@ -170,8 +174,9 @@ def normalised_position_probability(seq, sub_prob):
     # Get substitution probabilities for each position
     pos_proba = np.empty(len(seq))
     for pos in range(len(seq)):
-        nuc = seq[pos]  # the probability to draw a given position is equal to the sum
-        pos_proba[pos] = sum(sub_prob[nuc].values())  # of the substitution probabilities from this nucleotide
+        nuc = seq[pos]
+        # probability to draw a given position is equal to the sum of substitution probabilities (excluding self)
+        pos_proba[pos] = sum(v for k, v in sub_prob[nuc].items() if k != nuc)
 
     normed_pos_proba = pos_proba / sum(pos_proba)  # normalisation of all positions to sum at 1
 

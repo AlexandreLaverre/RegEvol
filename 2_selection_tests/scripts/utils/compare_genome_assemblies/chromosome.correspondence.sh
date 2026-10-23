@@ -7,9 +7,9 @@ suffix=$4
 
 ####################################################################################
 
-export path=${path:-"$(pwd)/../../"}
-export pathGenomes=${path}/data/genome_sequences/${species}
-export pathScripts=${path}/scripts/utils/compare_genome_assemblies
+export path=${path:-"$(pwd)"}
+export pathGenomes=${path}/../../data/genome_sequences/${species}
+export pathScripts=${path}/../scripts/utils/compare_genome_assemblies
 
 ####################################################################################
 

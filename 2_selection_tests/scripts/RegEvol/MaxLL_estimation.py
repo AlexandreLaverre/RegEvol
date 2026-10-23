@@ -30,10 +30,10 @@ maxSub = 150
 maxLength = 1000
 plots = False
 
-path = Path(__file__).resolve().parents[4]
+path = Path(__file__).resolve().parents[3]
 pathResults = f'{path}/results/positive_selection/{args.peakType}/{args.species}/{args.sample}/'
 pathMatrix = f"{path}/results/substitution_matrix/{args.species}/"
-sys.path.append(f"{path}/scripts/2_selection_tests/scripts/functions/")
+sys.path.append(f"{path}/2_selection_tests/scripts/functions/")
 import MLEvol as ML
 import SVM
 
@@ -48,7 +48,7 @@ if plots:
 
 ########################################################################################################################
 def estimate_evolution(id, plots=False):
-    chromosome = id.split(':')[0] if args.sample != "CTCF_binding/CTCF" else id.split('_')[0]
+    chromosome = id.split(':')[0] if args.sample != "CTCF_binding" else id.split('_')[0]
     if chromosome not in SubMats:
         print(f"Chromosome {chromosome} not found in the substitution matrix")
         return None

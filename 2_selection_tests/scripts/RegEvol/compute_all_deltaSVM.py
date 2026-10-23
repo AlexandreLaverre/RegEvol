@@ -25,9 +25,9 @@ args = parser.parse_args()
 maxSub = 150
 maxLen = 1000
 
-path = Path(__file__).resolve().parents[4]
+path = Path(__file__).resolve().parents[3]
 pathResults = f"{path}/results/positive_selection/{args.peakType}/{args.species}/{args.sample}"
-sys.path.append(str(path / "scripts/2_selection_tests/scripts/functions/"))
+sys.path.append(str(path / "2_selection_tests/scripts/functions/"))
 import SVM
 
 ####################################################################################################

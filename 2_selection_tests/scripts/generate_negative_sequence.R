@@ -12,6 +12,7 @@ baseDir = args[3]
 pathResults = args[4]
 
 BED = read.table(BED_file)
+species = "drosophila"
 
 # Define mapping of species to BSgenome package names
 bsgenomes <- list(
@@ -62,7 +63,7 @@ set.seed(12)
 max_seq = max(nrow(BED), 500)
 xfold= as.integer(max_seq/nrow(BED))
 
-genNullSeqs(BED_file, genome = genome, nMaxTrials=10, xfold=10,
+genNullSeqs(BED_file, genome = genome, nMaxTrials=20, xfold=xfold, batchsize=7500,
             outputBedFN = paste0(pathResults,'/negSet.bed'), 
             outputPosFastaFN = paste0(pathResults,'/posSet.fa'),
             outputNegFastaFN = paste0(pathResults,'/negSet.fa'))

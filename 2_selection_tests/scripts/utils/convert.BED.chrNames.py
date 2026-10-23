@@ -10,7 +10,7 @@ path = sys.argv[4]
 suffix = sys.argv[5] if len(sys.argv) > 5 else "NA"
 
 Correspondence = f"{path}/data/genome_sequences/{sp}/chromosome_correspondence_Ensembl2UCSC.txt"
-pathPeaks = f"{path}/results/peaks_calling/NarrowPeaks/{sp}/{sample}/"
+pathPeaks = f"{path}/results/peaks/{sp}/{sample}/"
 pathMatrix = f"{path}/results/substitution_matrix/{sp}/"
 chromosomes = [os.path.splitext(file)[0] for file in os.listdir(pathMatrix)]
 
