@@ -17,12 +17,13 @@ peakType: 'NarrowPeaks'
 system: 'local'
 TF_source: "config"
 ModelThreads: 4
+# Sub-worflows to run
 run_targets:
     - archive_alignments
     - model
     - MaxLLTest
     - PermutTest
-    #- model_validation
+    - model_validation # skippable, can take time
     #- get_ovelap_SNP
     #- SNP_to_delta
 
