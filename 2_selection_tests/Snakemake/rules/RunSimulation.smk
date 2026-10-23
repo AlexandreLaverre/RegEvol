@@ -8,7 +8,7 @@ peakType = config["peakType"]
 baseDir = os.path.abspath(config["baseDir"])
 
 pathResults = f"{baseDir}/results/positive_selection/{peakType}/{sp}/{sample}"
-pathPeaks = f"{baseDir}/results/peaks_calling/{peakType}/{sp}/{sample}"
+pathPeaks = f"{baseDir}/results/peaks/{sp}/{sample}"
 
 rule PermutationTest:
     message: "Test for positive selection between ancestral and focal sequences"

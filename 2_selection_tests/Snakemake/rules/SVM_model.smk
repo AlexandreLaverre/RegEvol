@@ -8,7 +8,7 @@ AncNode = config["AncNode"]
 baseDir = os.path.abspath(config["baseDir"])
 
 pathResults = f"{baseDir}/results/positive_selection/{peakType}/{sp}/{sample}"
-pathPeaks = f"{baseDir}/results/peaks_calling/{peakType}/{sp}/{sample}"
+pathPeaks = f"{baseDir}/results/peaks/{sp}/{sample}"
 
 rule GenerateNegativeSeq:
     message: "Generate random sequences respecting the focal sequences composition for gkm training"
@@ -63,7 +63,7 @@ rule ModelPrediction:
     message: "Generate SVM weights for all possible 10-mers, 4 threads"
     input:
         Model = pathResults + "/{TF}/Model/{TF}.model.txt",
-        kmer_fasta = baseDir + "/results/positive_selection/kmer.fa"
+        kmer_fasta = baseDir + "/data/kmers.fa"
     output: PredictedWeight = pathResults + "/{TF}/Model/kmer_predicted_weight.txt"
     log: out = pathResults + "/log/{TF}/ModelPrediction.out"
     priority: 2

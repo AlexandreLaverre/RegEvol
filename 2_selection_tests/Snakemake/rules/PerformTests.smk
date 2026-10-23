@@ -9,7 +9,7 @@ AncNode = config["AncNode"]
 baseDir = os.path.abspath(config["baseDir"])
 
 pathResults = f"{baseDir}/results/positive_selection/{peakType}/{sp}/{sample}"
-pathPeaks = f"{baseDir}/results/peaks_calling/{peakType}/{sp}/{sample}"
+pathPeaks = f"{baseDir}/results/peaks/{sp}/{sample}"
 
 rule ComputeAllDeltaSVM:
     """Compute all possible and observed SVM"""

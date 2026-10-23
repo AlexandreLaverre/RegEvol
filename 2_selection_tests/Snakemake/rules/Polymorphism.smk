@@ -19,7 +19,7 @@ elif sp == "drosophila":
 
 
 pathResults = f"{baseDir}/results/positive_selection/{peakType}/{sp}/{sample}"
-pathPeaks = f"{baseDir}/results/peaks_calling/{peakType}/{sp}/{sample}"
+pathPeaks = f"{baseDir}/results/peaks/{sp}/{sample}"
 pathPolymorphism = f"{baseDir}/results/polymorphism_analyses/{peakType}/{sp}/{sample}"
 
 rule DownloadVCF:
