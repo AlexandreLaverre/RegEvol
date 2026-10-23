@@ -12,7 +12,6 @@ baseDir = args[3]
 pathResults = args[4]
 
 BED = read.table(BED_file)
-species = "drosophila"
 
 # Define mapping of species to BSgenome package names
 bsgenomes <- list(
