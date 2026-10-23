@@ -20,7 +20,7 @@ fi
 
 if [ ${sp} = "human" ]; then
 	spID="Homo_sapiens.GRCh38"
-	sp_name="Homo_sapiens"
+	sp_name="Pan_troglodytes"
 	close_species="Homo_sapiens,Pan_troglodytes,Gorilla_gorilla"
 	anc_name="fullTreeAnc105"
 	chroms=({1..22} "X" "Y")
