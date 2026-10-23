@@ -141,9 +141,9 @@ Snakemake-specific parameters for subworkflows and selection tests are defined i
 ### Chromosome names
 Chromosome convention names should match between the peaks BED file and the assembly used for the whole-genome alignment (i.e "chr1" for UCSC vs "1" for Ensembl)
 The convention used in the genome alignment file should be indicated for each species in `/2_selection_tests/Snakemake/config/`. 
-Currently, using the Zoonomia alignment, the default `suffix` argument is set to "_UCSC_names" for human, mouse, caroli, spretus and rat. And to "" for all the other species.
-
-The suffix is supposed to match the provided peaks BED file: `results/peaks/<species>/<sample>/<TF>.peaks<suffix>.bed`
+Currently, using the Zoonomia alignment, the default `suffix` argument is set to "_UCSC_names" for human, mouse, caroli, spretus and rat. And to "" for all the other species.  
+     
+The suffix is supposed to match the provided peaks BED file: `results/peaks/<species>/<sample>/<TF>.peaks<suffix>.bed`.
 If your BED file doesn't follow the correct convention, you could rename the chromosome and adjust the BED filename yourself. The current pipeline is also able to automatically convert chromosome names from Ensembl to UCSC convention if you have both reference genomes in `/data/genome_sequences/{sp}/`. In this case, the genome file names should match the arguments `UCSC_Assembly` and `Ensembl_Assembly` in `/2_selection_tests/Snakemake/config/`. 
 The current default for human is: UCSC_Assembly="hg38.fa.gz" and Ensembl_Assembly="Homo_sapiens.GRCh38.dna_sm.toplevel.fa.gz".
 
