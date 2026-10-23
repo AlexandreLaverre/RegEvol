@@ -32,6 +32,7 @@ while [[ "$#" -gt 0 ]]; do
     case $1 in
         --sp) sp="$2"; shift ;;
         --sample) sample="$2"; shift ;;
+	--baseDir) baseDir="$2"; shift ;;
         --threads) threads="$2"; shift ;;
         --system) system="$2"; shift ;;
         --extend_config) extend_config="$2"; shift ;;

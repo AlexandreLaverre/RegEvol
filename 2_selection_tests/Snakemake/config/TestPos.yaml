@@ -22,8 +22,8 @@ run_targets:
     - model
     - MaxLLTest
     - PermutTest
-    - model_validation
-    - get_ovelap_SNP
+    #- model_validation
+    #- get_ovelap_SNP
     #- SNP_to_delta
 
 # Data Parameters
