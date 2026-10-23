@@ -120,7 +120,7 @@ Example:
 The pipeline requires the following three input files:
 
 1. **Whole Genome Alignment** (maf.gz format)  
-   → Expected file is located and named as `data/genome_alignments/<species>/triplet_ancestral.maf.gz`  
+   → Expected file is located and named as `data/genome_alignments/<species>/ancestral_alignment.maf.gz`  
    → Contains sequences of the species of interest aligned with an ancestral state.
    → The name of the Ancestral state is defined by anc_name and can be adapted in config/params.sh.
 
