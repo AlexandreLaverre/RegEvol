@@ -3,18 +3,18 @@
 sp=$1    		  # e.g: human
 pathResults=$2
 BED_file=$3
-AncNode="${4:-ancestral}"
+AncNode="${4:-ancestral}" # ancestral or sister
 
 #########################################################################
 # Define paths
 echo "Working dir: $path"
 export path=${path:-"$(pwd)/../../../"}
 
-pathGenomeAlign="${path}/data/genome_alignments/${sp}/triplet_${AncNode}.maf.gz"
+pathGenomeAlign="${path}/data/genome_alignments/${sp}/${AncNode}_alignment.maf.gz"
 pathAlign="${pathResults}/MAFs/"
 
 if [ ! -f "${pathGenomeAlign}" ]; then
-  echo "Genome alignment file not found!"
+  echo "Genome alignment file not found! Please provide ${path}/data/genome_alignments/${sp}/${AncNode}_alignment.maf.gz"
   exit
 fi
 

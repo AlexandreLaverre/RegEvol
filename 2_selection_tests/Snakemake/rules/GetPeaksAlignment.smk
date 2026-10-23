@@ -55,7 +55,7 @@ rule BED_split:
 rule GetSequencesMultiple:
     message: "Retrieve focal and ancestral sequences from multiple whole-genome alignment"
     input:
-        GenomeAlignment = f"{baseDir}/data/genome_alignments/{sp}/triplet_{AncNode}.maf.gz",
+        GenomeAlignment = f"{baseDir}/data/genome_alignments/{sp}/{AncNode}_alignment.maf.gz",
         BED_file_part = pathResults + "/log/{TF}/part{part}"
     output: Done = touch(pathResults + "/log/{TF}/GetAncestral_part{part}_{AncNode}_done")
     log: out = pathResults + "/log/{TF}/extract_sequences_from_MAF_part{part}_{AncNode}.out"

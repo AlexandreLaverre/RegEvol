@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export sp=$1
+export AncNode="${2:-ancestral}" # ancestral or sister
 
 ####################################################################################
 # Define paths
@@ -11,7 +12,7 @@ export pathAlignment=${path}/data/genome_alignments/${sp}/
 export pathGFF=${path}/data/genome_sequences/${sp}/
 
 export SpeciesTree=${path}/data/species_trees/${sp}_tree.nk
-export Alignment=${pathAlignment}/triplet_ancestor.maf.gz
+export Alignment=${pathAlignment}/${AncNode}_alignment.maf.gz
 
 ####################################################################################
 # Define names, chromosomes and files
