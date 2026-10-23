@@ -131,7 +131,7 @@ The pipeline requires the following three input files:
 4. **BSgenome object** (tar.gz format)  
    → Used by 2_selection_tests/scripts/generate_negative_sequences.R to obtain a matching negative set of sequences for model training.  
    → If BSgenome is publicly available for the species of interest, it will be automatically downloaded; otherwise, it will look in: `data/BSgenome/`  
-   → Home-made BSgenomes used in this study are available in Zenodo: https://zenodo.org/records/18379807
+   → Home-made BSgenomes used in this study are available in Zenodo: https://zenodo.org/records/18379807  
    → Guidelines to build a new BSgenome can be found in `2_selection_tests/scripts/utils/build_BSgenome/`
 
 ### Global and Snakemake configurations
